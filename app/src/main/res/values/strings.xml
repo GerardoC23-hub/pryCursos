@@ -6,14 +6,19 @@
     <string name="etiquetaEspacio">Espacio:</string>
     <string name="etiquetaHoras">Total Horas:</string>
     <string name="etiquetaAtencion">Días de atención:</string>
+    <string name="etiquetaMatricula">Matricula:</string>
+    <string name="etiquetaFecha">Fecha de Registro:</string>
+    <string name="etiquetaCorreo">Correo Institucional:</string>
+
+    <string name="txtTitulo1">Registro al curso</string>
     <string name="txtTitulo2">Detalle Del Curso</string>
-
-
+    <string name="txtInscripcion">Inscripción:</string>
     <string name="txtTitulo">CATÁLOGO DE CURSOS</string>
     <string name="txtCurso">Programación\nAvanzada</string>
     <string name="txtSalon">Salón: A-102</string>
     <string name="btn_ver_detalle">VER DETALLE</string>
     <string name="btn_registrarse">REGISTRARSE</string>
     <string name="btnVerRegistros">VER REGISTROS</string>
-
+    <string name="btnInscripcion">Confirmar Inscripción</string>
+    <string name="btnCancelar">Cancelar</string>
 </resources>

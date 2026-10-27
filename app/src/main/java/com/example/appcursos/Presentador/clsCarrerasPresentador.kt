@@ -2,6 +2,7 @@ package com.example.appcursos.Presentador
 
 import com.example.appcursos.Modelo.clsCarrerasModelo
 import com.example.appcursos.Modelo.clsCursosModelo
+import com.example.appcursos.Modelo.dataCursos
 import com.example.appcursos.Vista.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -36,5 +37,10 @@ class clsCarrerasPresentador(private val vista: MainActivity) {
                 e.printStackTrace()
             }
         }
+    }
+
+    fun inscripcionCurso(curso: dataCursos)
+    {
+        vista.abrirInscripcionCurso(curso.id,curso.nombrecurso,curso.urlimagenprincipal)
     }
 }

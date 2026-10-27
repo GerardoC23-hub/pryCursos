@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         rvListaCursos.adapter = adaptador
 
         presentador = clsCarrerasPresentador(this)
+
         presentador.obtenerCarreras()
 
         btnVerRegistros.setOnClickListener {
@@ -87,6 +88,20 @@ class MainActivity : AppCompatActivity() {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
+    }
+
+    fun registrarseCurso(curso: dataCursos)
+    {
+        presentador.inscripcionCurso(curso)
+    }
+
+    fun abrirInscripcionCurso(id:Int, nombreCurso: String,urlImagen: String)
+    {
+        val intent = Intent(this, RegistroCursoActivity::class.java)
+        intent.putExtra("ID_CURSO",id)
+        intent.putExtra("NOMBRE_CURSO",nombreCurso)
+        intent.putExtra("URL_IMAGEN",urlImagen)
+        startActivity(intent)
     }
 
     fun mostrarCursos(cursos: List<dataCursos>) {
