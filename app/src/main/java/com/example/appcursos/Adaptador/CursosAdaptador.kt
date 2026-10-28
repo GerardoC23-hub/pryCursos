@@ -1,6 +1,5 @@
 package com.example.appcursos.Adaptador
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.appcursos.Modelo.dataCursos
 import com.example.appcursos.R
-import com.example.appcursos.Vista.DetalleCursosActivity
 import com.example.appcursos.Vista.MainActivity
 
 class CursosAdaptador(
