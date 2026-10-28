@@ -35,27 +35,29 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListaCursos"
         android:layout_width="415dp"
-        android:layout_height="494dp"
+        android:layout_height="0dp"
         android:layout_marginStart="1dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVerRegistros"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnCarreras"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintTop_toBottomOf="@+id/spnCarreras" />
 
     <Button
         android:id="@+id/btnVerRegistros"
-        android:layout_width="341dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:backgroundTint="#3F51B5"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:text="@string/btnVerRegistros"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvListaCursos" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
