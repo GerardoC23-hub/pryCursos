@@ -48,6 +48,8 @@ class CursosAdaptador(
 
         holder.btnVerDetalle.setOnClickListener {
             //Para mi compañerito javier
+            activity.seleccionarCurso(curso)
+
         }
 
         holder.btnRegistrarse.setOnClickListener {

@@ -104,6 +104,25 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun seleccionarCurso(curso: dataCursos)
+    {
+        presentador.seleccionarCurso(curso)
+    }
+
+    fun DetalleCurso(id:Int, codigoCurso:String, nombreCurso:String, descripcion:String, edificio:String, salon:String,totalHoras:String,diasAtencion:String, horasAtencion:String){
+        val intent = Intent(this, DetalleCursosActivity::class.java)
+        intent.putExtra("ID_CURSO",id)
+        intent.putExtra("CODIGO_CURSO",codigoCurso)
+        intent.putExtra("NOMBRE_CURSO", nombreCurso)
+        intent.putExtra("DESCRIPCION",descripcion)
+        intent.putExtra("EDIFICIO", edificio)
+        intent.putExtra("SALON",salon)
+        intent.putExtra("TOTAL_HORAS", totalHoras)
+        intent.putExtra("DIAS_ATENCION", diasAtencion)
+        intent.putExtra("HORAS_ATENCION", horasAtencion)
+        startActivity(intent)
+    }
+
     fun mostrarCursos(cursos: List<dataCursos>) {
         adaptador.actualizarLista(cursos)
     }
