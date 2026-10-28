@@ -26,6 +26,8 @@ class clsCarrerasPresentador(private val vista: MainActivity) {
         }
     }
 
+
+
     fun obtenerCursosPorCarrera(idCarrera: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -38,6 +40,12 @@ class clsCarrerasPresentador(private val vista: MainActivity) {
             }
         }
     }
+
+    fun seleccionarCurso(curso: dataCursos)
+    {
+        vista.DetalleCurso(curso.id,curso.codigocurso,curso.nombrecurso,curso.descripcion,curso.edificio,curso.salon,curso.totalhoras,curso.diasatencion,curso.horasatencion)
+    }
+
 
     fun inscripcionCurso(curso: dataCursos)
     {
