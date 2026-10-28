@@ -36,12 +36,7 @@ class CursosAdaptador(
         val curso = listaCursos[position]
 
         holder.txtCurso.text = curso.nombrecurso
-        val salonTexto = if (curso.salon.contains("Salón", ignoreCase = true)) {
-            curso.salon
-        } else {
-            "Salón: ${curso.salon}"
-        }
-        holder.txtSalon.text = salonTexto
+        holder.txtSalon.text = "Salón: ${curso.salon}"
         val baseurl="https://apicursos.4cuthh.com/cursos_api/"
         val urlImagenCompleta=baseurl+curso.urlimagenprincipal
             Glide.with(holder.itemView.context)
