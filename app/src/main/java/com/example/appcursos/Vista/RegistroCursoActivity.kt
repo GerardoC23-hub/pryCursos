@@ -28,8 +28,10 @@ class RegistroCursoActivity : AppCompatActivity() {
     private lateinit var txtFecha: EditText
     private lateinit var txtCorreoInstitucional: EditText
     private lateinit var presenter: clsInscripcionPresentador
-
+    private lateinit var btnConfirmar: Button
     private lateinit var btnCancelar: Button
+
+    private var idCurso:Int=0;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -46,7 +48,10 @@ class RegistroCursoActivity : AppCompatActivity() {
         txtFecha = findViewById(R.id.txtFecha)
         txtCorreoInstitucional = findViewById(R.id.txtCorreoInstitucional)
 
+        btnConfirmar = findViewById(R.id.btnConfirmar)
         btnCancelar = findViewById(R.id.btnCancelar)
+
+        idCurso = intent.getIntExtra("ID_CURSO", 0)
         val nombreCurso = intent.getStringExtra("NOMBRE_CURSO")?:""
         val urlImagen = intent.getStringExtra("URL_IMAGEN")?:""
 
@@ -62,7 +67,8 @@ class RegistroCursoActivity : AppCompatActivity() {
             .into(imgCurso)
 
         txtMatricula.setOnEditorActionListener(this::ejecutarBuscarAlumno)
-        txtFecha.setOnClickListener(this::ejecutarSeleccionarFecha)
+
+        btnConfirmar.setOnClickListener(this::ejecutarRegistro)
         btnCancelar.setOnClickListener(this::ejecutarCancelar)
     }
 
@@ -82,14 +88,31 @@ class RegistroCursoActivity : AppCompatActivity() {
         finish()
     }
 
+    fun ejecutarRegistro(v: View)
+    {
+        presenter.registrar(idCurso, txtMatricula.text.toString(), txtFecha.text.toString())
+    }
+
     fun insertarCorreo(correo: String)
     {
         txtCorreoInstitucional.setText(correo)
     }
 
-    fun limpiarCorreo()
+    fun insertarFecha(fecha: String)
+    {
+        txtFecha.setText(fecha)
+    }
+
+    fun limpiar()
     {
         txtCorreoInstitucional.setText("")
+        txtFecha.setText("")
+    }
+
+    fun registroExitoso(mensaje: String)
+    {
+        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     fun mostrarMensaje(mensaje: String)
@@ -102,23 +125,4 @@ class RegistroCursoActivity : AppCompatActivity() {
         Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
     }
 
-    fun ejecutarSeleccionarFecha(v: View)
-    {
-        val hoy = Calendar.getInstance()
-        val year = hoy.get(Calendar.YEAR)
-        val month = hoy.get(Calendar.MONTH)
-        val day = hoy.get(Calendar.DAY_OF_MONTH)
-
-        val dialogo = DatePickerDialog(this, { _, yearElegido, monthElegido, dayElegido ->
-            txtFecha.setText(
-                String.format(
-                    "%04d-%02d-%02d",
-                    yearElegido,
-                    monthElegido + 1,
-                    dayElegido
-                )
-            )
-        }, year, month, day)
-        dialogo.show()
-    }
 }
