@@ -44,8 +44,8 @@ class EstadoInscripcionesAdaptador(private val activity: EstadoRegistroActivity,
         holder.txtNombre.text = inscritos.nombrecurso
         holder.progressBararraCurso.max = inscritos.cupomaximo
         holder.progressBararraCurso.progress = inscritos.inscritos
-        holder.txtInscritos.text = inscritos.inscritos.toString()+"Inscritos"
-        holder.txtTotalInscritos.text = inscritos.cupomaximo.toString()+"Total"
+        holder.txtInscritos.text = inscritos.inscritos.toString()+" Inscritos"
+        holder.txtTotalInscritos.text = inscritos.cupomaximo.toString()+" Total"
 
         val baseUrl= "https://apicursos.4cuthh.com/cursos_api/"
         val urlImagenesCurso =baseUrl + inscritos.urlimagenprincipal
